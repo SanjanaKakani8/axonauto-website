@@ -7,7 +7,7 @@ export default function HeroVideo(){
             loop
             playsInline
             preload="metadata"
-            className="w-full h-full object-cover scale-105 animate-slowZoom">
+            className="absolute inset-0 w-full h-full object-cover object-center md:object-cover scale-105 animate-slowZoom">
                 <source src="/videos/hero.mp4" type="video/mp4" />
 
             </video>
