@@ -52,14 +52,14 @@ export default function Home() {
               alt=""
               aria-hidden
               draggable={false}
-              className="h-12 w-12 md:h-14 md:w-14 select-none"
+              className="h-16 w-16 md:h-20 md:w-20 select-none"
             />
             <motion.img
               layoutId="axon-logo-text"
               src={logoText}
               alt="AxonAuto"
               draggable={false}
-              className="h-6 md:h-7 select-none"
+              className="h-8 md:h-10 select-none"
             />
           </div>
 
