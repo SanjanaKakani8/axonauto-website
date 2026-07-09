@@ -8,7 +8,7 @@ import WhatsAppButton from './components/WhatsAppButton.jsx';
 import LoadingScreen from './components/LoadingScreen.jsx';
 
 import Home from './pages/Home.jsx';
-
+import ScrollToTop from './components/ScrollToTop.jsx';
 // Route-level code splitting for secondary pages keeps the initial bundle small.
 // Home is loaded eagerly since it must be mounted the instant the splash
 // screen plays, so the shared logo layout transition has a target to land on.
@@ -19,13 +19,6 @@ const Contact = lazy(() => import('./pages/Contact.jsx'));
 const NotFound = lazy(() => import('./pages/NotFound.jsx'));
 
 // Scrolls to top on every route change so navigation feels intentional.
-function ScrollToTop() {
-  const { pathname } = useLocation();
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
-  }, [pathname]);
-  return null;
-}
 
 export default function App() {
   const location = useLocation();

@@ -83,3 +83,15 @@ textarea:focus-visible {
     scroll-behavior: auto !important;
   }
 }
+@keyframes slowZoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+.animate-slowZoom {
+
+ animation:slowZoom 18s ease-in-out infinite alternate;
+} 

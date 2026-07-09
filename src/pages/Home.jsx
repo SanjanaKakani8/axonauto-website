@@ -15,6 +15,7 @@ import { galleryImages } from '../data/gallery.js';
 import logoGear from '../assets/logo-gear.png';
 import logoText from '../assets/logo-text.png';
 import useRipple from '../hooks/useRipple.jsx';
+import HeroVideo from '../components/HeroVideo.jsx';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -36,10 +37,10 @@ export default function Home() {
         title="Doorstep Car Care in Hyderabad"
         description={business.shortDescription}
       />
-
       {/* ───────────── HERO ───────────── */}
-      <section className="relative flex min-h-screen items-center overflow-hidden pt-24">
-        <HeroSlider />
+      <section className="relative min-h-screen overflow-hidden flex items-center">
+        <HeroVideo />
+        <div className='relative z-10'>
 
         <div className="container-page relative">
           {/* This is the SAME logo element from the splash screen — Framer
@@ -129,6 +130,7 @@ export default function Home() {
         </div>
 
         <ScrollIndicator delay={baseDelay + 0.3} />
+        </div>
       </section>
 
       {/* ───────────── SERVICES PREVIEW ───────────── */}
