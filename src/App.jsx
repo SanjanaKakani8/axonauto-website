@@ -7,8 +7,11 @@ import Footer from './components/Footer.jsx';
 import WhatsAppButton from './components/WhatsAppButton.jsx';
 import LoadingScreen from './components/LoadingScreen.jsx';
 
-// Route-level code splitting keeps the initial bundle small.
-const Home = lazy(() => import('./pages/Home.jsx'));
+import Home from './pages/Home.jsx';
+
+// Route-level code splitting for secondary pages keeps the initial bundle small.
+// Home is loaded eagerly since it must be mounted the instant the splash
+// screen plays, so the shared logo layout transition has a target to land on.
 const About = lazy(() => import('./pages/About.jsx'));
 const Services = lazy(() => import('./pages/Services.jsx'));
 const Gallery = lazy(() => import('./pages/Gallery.jsx'));
@@ -34,7 +37,7 @@ export default function App() {
     if (!introPlaying) return;
     // Matches the entrance sequence length in LoadingScreen (~3s)
     // before triggering the exit fade.
-    const timer = setTimeout(() => setIntroPlaying(false), 3000);
+    const timer = setTimeout(() => setIntroPlaying(false), 3100);
     return () => clearTimeout(timer);
   }, [introPlaying]);
 
@@ -44,7 +47,13 @@ export default function App() {
 
       <ScrollToTop />
       <Navbar />
-      <Suspense fallback={<div className="min-h-screen bg-base" />}>
+      <Suspense
+        fallback={
+          <div className="flex min-h-screen items-center justify-center bg-base">
+            <div className="h-10 w-10 animate-spin rounded-full border-2 border-white/10 border-t-primary" />
+          </div>
+        }
+      >
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Home />} />

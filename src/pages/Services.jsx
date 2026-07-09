@@ -5,6 +5,8 @@ import { Wrench, BatteryCharging, ShieldCheck, Zap, Check, ArrowRight, Phone } f
 import SEO from '../components/SEO.jsx';
 import ParticleBackground from '../components/ParticleBackground.jsx';
 import FAQAccordion from '../components/FAQAccordion.jsx';
+import RippleLink from '../components/RippleLink.jsx';
+import useRipple from '../hooks/useRipple.jsx';
 import { services } from '../data/services.js';
 import { faqs } from '../data/faqs.js';
 import { business } from '../data/business.js';
@@ -22,6 +24,9 @@ const fadeUp = {
 };
 
 export default function Services() {
+  const callRipple = useRipple();
+  const contactRipple = useRipple();
+
   return (
     <motion.main
       initial={{ opacity: 0 }}
@@ -73,13 +78,22 @@ export default function Services() {
                     <Icon size={26} />
                   </div>
                   <h2 className="font-display text-2xl font-bold text-white mb-3">{service.title}</h2>
-                  <p className="text-white leading-relaxed mb-6">{service.description}</p>
-                  <Link to="/contact" className="btn-primary text-sm">
+                  <p className="text-ash/70 leading-relaxed mb-6">{service.description}</p>
+                  <RippleLink to="/contact" className="btn-primary text-sm">
                     Book This Service <ArrowRight size={16} />
-                  </Link>
+                  </RippleLink>
                 </div>
 
                 <div className="flex-1 w-full">
+                  <div className="mb-5 overflow-hidden rounded-2xl border border-white/10">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      loading="lazy"
+                      decoding="async"
+                      className="h-56 w-full object-cover transition-transform duration-700 hover:scale-105"
+                    />
+                  </div>
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {service.features.map((f) => (
                       <li
@@ -127,11 +141,13 @@ export default function Services() {
             Call our team and we'll help you figure out the right service — no obligation.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
-            <a href={`tel:${business.contact.phoneRaw}`} className="btn-primary">
+            <a href={`tel:${business.contact.phoneRaw}`} className="btn-primary" onClick={callRipple.onClick}>
               <Phone size={18} /> {business.contact.phone}
+              {callRipple.ripples}
             </a>
-            <Link to="/contact" className="btn-secondary">
+            <Link to="/contact" className="btn-secondary" onClick={contactRipple.onClick}>
               Contact Us <ArrowRight size={18} />
+              {contactRipple.ripples}
             </Link>
           </div>
         </div>

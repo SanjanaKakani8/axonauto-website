@@ -5,7 +5,7 @@ import { business } from '../data/business.js';
 export default function WhatsAppButton() {
   const message = encodeURIComponent("Hi AxonAuto, I'd like to book a doorstep car service.");
   const href = `https://wa.me/${business.contact.whatsappRaw}?text=${message}`;
-  const delay = 3.6;
+  const delay = 3.8;
 
   return (
     <motion.a

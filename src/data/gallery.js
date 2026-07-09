@@ -1,8 +1,8 @@
-import engineBaySuzuki from '../assets/gallery/engine-bay-suzuki.jpg';
-import serviceKitTata from '../assets/gallery/service-kit-tata.jpg';
-import grilleHyundai from '../assets/gallery/grille-hyundai.jpg';
-import serviceKitHyundai from '../assets/gallery/service-kit-hyundai.jpg';
-import grilleAudi from '../assets/gallery/grille-audi.jpg';
+import engineBaySuzuki from '../assets/gallery/engine-bay-suzuki.webp';
+import serviceKitTata from '../assets/gallery/service-kit-tata.webp';
+import grilleHyundai from '../assets/gallery/grille-hyundai.webp';
+import serviceKitHyundai from '../assets/gallery/service-kit-hyundai.webp';
+import grilleAudi from '../assets/gallery/grille-audi.webp';
 
 export const galleryImages = [
   {

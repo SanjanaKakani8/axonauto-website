@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Phone, ArrowRight, Send } from 'lucide-react';
+import { Phone, ArrowRight, Send, Check } from 'lucide-react';
 
 import SEO from '../components/SEO.jsx';
-import ParticleBackground from '../components/ParticleBackground.jsx';
+import HeroSlider from '../components/HeroSlider.jsx';
 import ScrollIndicator from '../components/ScrollIndicator.jsx';
 import ServiceCard from '../components/ServiceCard.jsx';
 import FeatureCard from '../components/FeatureCard.jsx';
@@ -12,6 +12,9 @@ import StatCounter from '../components/StatCounter.jsx';
 import { business } from '../data/business.js';
 import { services } from '../data/services.js';
 import { galleryImages } from '../data/gallery.js';
+import logoGear from '../assets/logo-gear.png';
+import logoText from '../assets/logo-text.png';
+import useRipple from '../hooks/useRipple.jsx';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -20,7 +23,12 @@ const fadeUp = {
 
 export default function Home() {
   // Hero content appears right after the splash finishes (~3s play + 0.6s fade).
-  const baseDelay = 3.6;
+  const baseDelay = 3.8;
+  const bookRipple = useRipple();
+  const callRipple = useRipple();
+  const ctaBookRipple = useRipple();
+  const ctaCallRipple = useRipple();
+  const formRipple = useRipple();
 
   return (
     <main>
@@ -31,9 +39,30 @@ export default function Home() {
 
       {/* ───────────── HERO ───────────── */}
       <section className="relative flex min-h-screen items-center overflow-hidden pt-24">
-        <ParticleBackground dense />
+        <HeroSlider />
 
         <div className="container-page relative">
+          {/* This is the SAME logo element from the splash screen — Framer
+              Motion's shared layoutId animates it from the splash straight
+              into this resting position, no fade, no second logo. */}
+          <div className="mb-8 flex items-center gap-3">
+            <motion.img
+              layoutId="axon-logo-gear"
+              src={logoGear}
+              alt=""
+              aria-hidden
+              draggable={false}
+              className="h-12 w-12 md:h-14 md:w-14 select-none"
+            />
+            <motion.img
+              layoutId="axon-logo-text"
+              src={logoText}
+              alt="AxonAuto"
+              draggable={false}
+              className="h-6 md:h-7 select-none"
+            />
+          </div>
+
           <motion.p
             className="eyebrow mb-5"
             initial={{ opacity: 0, y: 16 }}
@@ -70,12 +99,32 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: baseDelay + 0.45, duration: 0.7 }}
           >
-            <Link to="/contact" className="btn-primary">
+            <Link to="/contact" className="btn-primary" onClick={bookRipple.onClick}>
               Book Service <ArrowRight size={18} />
+              {bookRipple.ripples}
             </Link>
-            <a href={`tel:${business.contact.phoneRaw}`} className="btn-secondary">
+            <a href={`tel:${business.contact.phoneRaw}`} className="btn-secondary" onClick={callRipple.onClick}>
               <Phone size={18} /> Call Now
+              {callRipple.ripples}
             </a>
+          </motion.div>
+
+          {/* Glassmorphism feature badges */}
+          <motion.div
+            className="mt-10 flex flex-wrap gap-3"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: baseDelay + 0.6, duration: 0.7 }}
+          >
+            {['Trusted Service', 'Genuine Parts', 'Expert Technicians', 'Quick Support'].map((label) => (
+              <span
+                key={label}
+                className="flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs md:text-sm font-medium text-ash/90 backdrop-blur-md"
+              >
+                <Check size={14} className="text-primary" />
+                {label}
+              </span>
+            ))}
           </motion.div>
         </div>
 
@@ -205,11 +254,13 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex flex-wrap items-center justify-center gap-4"
           >
-            <Link to="/contact" className="btn-primary">
+            <Link to="/contact" className="btn-primary" onClick={ctaBookRipple.onClick}>
               Book Service <ArrowRight size={18} />
+              {ctaBookRipple.ripples}
             </Link>
-            <a href={`tel:${business.contact.phoneRaw}`} className="btn-secondary">
+            <a href={`tel:${business.contact.phoneRaw}`} className="btn-secondary" onClick={ctaCallRipple.onClick}>
               <Phone size={18} /> Call Now
+              {ctaCallRipple.ripples}
             </a>
           </motion.div>
         </div>
@@ -320,8 +371,9 @@ export default function Home() {
                 className="w-full resize-none rounded-lg border border-white/10 bg-base/60 px-4 py-3 text-sm text-white placeholder:text-ash/30 focus:border-primary outline-none transition-colors"
               />
             </div>
-            <button type="submit" className="btn-primary w-full">
+            <button type="submit" className="btn-primary w-full" onClick={formRipple.onClick}>
               Send Request <Send size={16} />
+              {formRipple.ripples}
             </button>
           </motion.form>
         </div>

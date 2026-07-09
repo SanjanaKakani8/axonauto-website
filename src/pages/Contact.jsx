@@ -4,6 +4,7 @@ import { Phone, Mail, MapPin, Send, MessageCircle, Clock } from 'lucide-react';
 
 import SEO from '../components/SEO.jsx';
 import ParticleBackground from '../components/ParticleBackground.jsx';
+import useRipple from '../hooks/useRipple.jsx';
 import { business } from '../data/business.js';
 import { galleryImages } from '../data/gallery.js';
 
@@ -14,6 +15,7 @@ const fadeUp = {
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const submitRipple = useRipple();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -123,7 +125,7 @@ export default function Contact() {
                 <p className="text-xs uppercase tracking-wider text-ash/50 mb-1.5">Business Hours</p>
                 {business.businessHours.map((h) => (
                   <p key={h.day} className="text-sm text-ash/70">
-                    <span className="text-white/80">{h.day}:</span> {h.hours}
+                    <span className="text-white/80">{h.day}:24/7</span> 
                   </p>
                 ))}
               </div>
@@ -201,8 +203,9 @@ export default function Contact() {
                 />
               </div>
 
-              <button type="submit" className="btn-primary w-full sm:w-auto">
+              <button type="submit" className="btn-primary w-full sm:w-auto" onClick={submitRipple.onClick}>
                 Send Request <Send size={16} />
+                {submitRipple.ripples}
               </button>
 
               {submitted && (
@@ -218,15 +221,7 @@ export default function Contact() {
 
             {/* Real service photo + Google Maps placeholder */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="aspect-square overflow-hidden rounded-2xl border border-white/10">
-                <img
-                  src={galleryImages[2].src}
-                  alt={galleryImages[2].alt}
-                  loading="lazy"
-                  decoding="async"
-                  className="h-full w-full object-cover"
-                />
-              </div>
+              
               <div className="relative aspect-square overflow-hidden rounded-2xl border border-white/10 bg-secondary/40 grid place-items-center">
                 <div className="text-center px-4">
                   <MapPin className="mx-auto mb-3 text-primary" size={28} />

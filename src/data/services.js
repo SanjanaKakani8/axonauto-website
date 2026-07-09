@@ -1,10 +1,16 @@
 // Service catalog. Icons referenced by key and resolved in components
 // via the ICONS map so this file stays framework-agnostic.
 
+import periodicCarService from '../assets/services/periodic-car-service.webp';
+import batteryReplacement from '../assets/services/battery-replacement.webp';
+import roadsideAssistance from '../assets/services/roadside-assistance.webp';
+import jumpStart from '../assets/services/jump-start.webp';
+
 export const services = [
   {
     id: 'periodic-service',
     icon: 'wrench',
+    image: periodicCarService,
     title: 'Periodic Car Service',
     shortDescription: 'Complete scheduled maintenance to keep your car running at its best.',
     description:
@@ -14,6 +20,7 @@ export const services = [
   {
     id: 'battery-replacement',
     icon: 'battery',
+    image: batteryReplacement,
     title: 'Battery Replacement',
     shortDescription: 'Same-day battery testing and replacement, wherever you are.',
     description:
@@ -23,6 +30,7 @@ export const services = [
   {
     id: 'roadside-assistance',
     icon: 'shield',
+    image: roadsideAssistance,
     title: 'Roadside Assistance',
     shortDescription: '24/7 emergency support wherever your car needs it.',
     description:
@@ -32,6 +40,7 @@ export const services = [
   {
     id: 'jump-start',
     icon: 'zap',
+    image: jumpStart,
     title: 'Jump Start',
     shortDescription: 'Fast jump starts to get a dead battery running again.',
     description:

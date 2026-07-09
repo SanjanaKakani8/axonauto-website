@@ -5,6 +5,7 @@ import { Menu, X, Phone } from 'lucide-react';
 
 import Logo from './Logo.jsx';
 import useScrollPosition from '../hooks/useScrollPosition.js';
+import useRipple from '../hooks/useRipple.jsx';
 import { business } from '../data/business.js';
 
 const NAV_LINKS = [
@@ -18,6 +19,8 @@ const NAV_LINKS = [
 export default function Navbar() {
   const scrolled = useScrollPosition(40);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const desktopBookRipple = useRipple();
+  const mobileBookRipple = useRipple();
 
   return (
     <header
@@ -66,8 +69,9 @@ export default function Navbar() {
             <Phone size={16} className="text-primary" />
             {business.contact.phone}
           </a>
-          <Link to="/contact" className="btn-primary !py-2.5 !px-5 text-sm">
+          <Link to="/contact" className="btn-primary !py-2.5 !px-5 text-sm" onClick={desktopBookRipple.onClick}>
             Book Service
+            {desktopBookRipple.ripples}
           </Link>
         </div>
 
@@ -99,10 +103,11 @@ export default function Navbar() {
                     to={link.to}
                     onClick={() => setMobileOpen(false)}
                     className={({ isActive }) =>
-                      `block py-3 font-display text-base font-medium ${
-                        isActive ? 'text-primary' : 'text-ash'
+                      `block py-3 font-display text-base font-medium transition-colors duration-200 ${
+                        isActive ? 'text-primary' : 'hover:text-white'
                       }`
                     }
+                    style={({ isActive }) => (isActive ? {} : { color: '#E5E5E5' })}
                   >
                     {link.label}
                   </NavLink>
@@ -111,10 +116,14 @@ export default function Navbar() {
               <li className="pt-2">
                 <Link
                   to="/contact"
-                  onClick={() => setMobileOpen(false)}
+                  onClick={(e) => {
+                    setMobileOpen(false);
+                    mobileBookRipple.onClick(e);
+                  }}
                   className="btn-primary w-full text-sm"
                 >
                   Book Service
+                  {mobileBookRipple.ripples}
                 </Link>
               </li>
             </ul>

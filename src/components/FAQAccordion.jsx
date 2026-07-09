@@ -19,13 +19,16 @@ export default function FAQAccordion({ items }) {
             <button
               onClick={() => toggle(i)}
               aria-expanded={isOpen}
-              className="flex w-full items-center justify-between gap-4 px-5 py-4 md:px-6 md:py-5 text-left text-white"
+              className="flex w-full items-center justify-between gap-4 px-5 py-4 md:px-6 md:py-5 text-left"
             >
-              <span className="text-white">
+              <span style={{ color: '#ffffff' }}>
                 <span className="block text-[10px] font-display font-semibold uppercase tracking-wider text-primary mb-1">
                   {item.category}
                 </span>
-                <span className="font-display text-sm md:text-base font-medium text-white">
+                <span
+                  className="font-display text-sm md:text-base font-medium"
+                  style={{ color: '#ffffff' }}
+                >
                   {item.question}
                 </span>
               </span>
@@ -47,7 +50,10 @@ export default function FAQAccordion({ items }) {
                   transition={{ duration: 0.35, ease: 'easeInOut' }}
                   className="overflow-hidden"
                 >
-                  <p className="px-5 md:px-6 pb-5 text-sm text-white leading-relaxed">
+                  <p
+                    className="px-5 md:px-6 pb-5 text-sm leading-relaxed"
+                    style={{ color: 'rgba(255,255,255,0.75)' }}
+                  >
                     {item.answer}
                   </p>
                 </motion.div>

@@ -44,6 +44,10 @@ export default {
           '0%': { transform: 'translateX(-150%) skewX(-15deg)' },
           '100%': { transform: 'translateX(250%) skewX(-15deg)' },
         },
+        rippleburst: {
+          '0%': { transform: 'scale(0)', opacity: 0.5 },
+          '100%': { transform: 'scale(1)', opacity: 0 },
+        },
       },
       animation: {
         pulseGlow: 'pulseGlow 5s ease-in-out infinite',

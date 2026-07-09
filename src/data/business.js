@@ -81,8 +81,8 @@ export const business = {
     linkedin: '#',
   },
   businessHours: [
-    { day: 'Monday – Saturday', hours: '8:00 AM – 9:00 PM' },
-    { day: 'Sunday', hours: '9:00 AM – 6:00 PM' },
+    { day: 'Monday – Sunday', hours: '8:00 AM – 9:00 PM' },
+  
   ],
 };
 
