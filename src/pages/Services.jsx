@@ -76,6 +76,16 @@ export default function Services() {
                 <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary mb-5">
                   <Icon size={22} />
                 </div>
+                <div className="w-full max-w-4xl mx-auto">
+                  <div className="mb-5 overflow-hidden rounded-2xl border border-white/10">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      loading="lazy"
+                      decoding="async"
+                      className="h-72 w-full lg:h-80 object-cover transition-transform rounded-2xl hover:scale-105"
+                    />
+                  </div>
 
                 <h2 className="text-3xl font-display font-bold text-white mb-4">
                 {service.title}
@@ -84,41 +94,7 @@ export default function Services() {
                 <p className="text-ash/70 leading-8 mb-6">
                 {service.description}
                 </p>
-
-                <div className="flex gap-3 mt-6">
-
-                 <a
-                    href={`https://wa.me/${business.contact.whatsappRaw}?text=Hi%20AxonAuto,%20I'm%20interested%20in%20${encodeURIComponent(service.title)}.`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 flex items-center justify-center gap-2 rounded-xl bg-green-500 hover:bg-green-600 text-white text-sm font-semibold py-3 transition"
-                  >
-                  <MessageCircle size={16} />
-                  WhatsApp
-                 </a>
-
-                  <a
-                    href={`tel:${business.contact.phoneRaw}`}
-                    className="flex-1 flex items-center justify-center gap-2 rounded-xl bg-primary hover:bg-red-600 text-white text-sm font-semibold py-3 transition"
-                  >
-                  <Phone size={16} />
-                  Call
-                  </a>
-
-                </div>
-              </div>
-
-                <div className="flex-1 w-full">
-                  <div className="mb-5 overflow-hidden rounded-2xl border border-white/10">
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      loading="lazy"
-                      decoding="async"
-                      className="h-56 w-full object-cover transition-transform duration-700 hover:scale-105"
-                    />
-                  </div>
-                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {service.features.map((f) => (
                       <li
                         key={f}
@@ -129,6 +105,31 @@ export default function Services() {
                       </li>
                     ))}
                   </ul>
+                <div className="flex gap-4 justify-center mt-6">
+
+                 <a
+                    href={`https://wa.me/${business.contact.whatsappRaw}?text=Hi%20AxonAuto,%20I'm%20interested%20in%20${encodeURIComponent(service.title)}.`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-48 flex items-center justify-center gap-2 rounded-xl bg-green-500 hover:bg-green-600 text-white text-sm font-semibold py-3 transition"
+                  >
+                  <MessageCircle size={16} />
+                  WhatsApp
+                 </a>
+
+                  <a
+                    href={`tel:${business.contact.phoneRaw}`}
+                    className="w-48 flex items-center justify-center gap-2 rounded-xl bg-primary hover:bg-red-600 text-white text-sm font-semibold py-3 transition"
+                  >
+                  <Phone size={16} />
+                  Call
+                  </a>
+
+                </div>
+              </div>
+
+                
+                  
                 </div>
               </motion.div>
             );
