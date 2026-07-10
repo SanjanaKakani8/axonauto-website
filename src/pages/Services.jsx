@@ -77,7 +77,7 @@ export default function Services() {
                   <Icon size={22} />
                 </div>
                 <div className="w-full max-w-4xl mx-auto">
-                  <div className="mb-5 overflow-hidden rounded-2xl border border-white/10">
+                  <div className="order-1 lg:order-2 mb-5 overflow-hidden rounded-2xl border border-white/10">
                     <img
                       src={service.image}
                       alt={service.title}
@@ -86,7 +86,7 @@ export default function Services() {
                       className="h-72 w-full lg:h-80 object-cover transition-transform rounded-2xl hover:scale-105"
                     />
                   </div>
-
+                <div className='order-2 lg:order-1'>
                 <h2 className="text-3xl font-display font-bold text-white mb-4">
                 {service.title}
                 </h2>
@@ -129,7 +129,7 @@ export default function Services() {
               </div>
 
                 
-                  
+               </div>   
                 </div>
               </motion.div>
             );
