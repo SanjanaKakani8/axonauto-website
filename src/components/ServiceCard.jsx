@@ -45,13 +45,13 @@ export default function ServiceCard({ service, index = 0 }) {
         <p className="text-sm text-ash/70 leading-relaxed mb-5">{service.shortDescription}</p>
       <div className="mt-auto flex items-center gap-3">
         <RippleLink to="/contact" className="btn-primary !py-2.5 flex-1 text-sm">
-          Book Service
+        BookNow
         </RippleLink>
         <a
           href={`tel:${business.contact.phoneRaw}`}
           className="btn-secondary !py-2.5 flex-1 text-sm"
         >
-          <Phone size={16} /> Call Now
+          <Phone size={16} /> Call
         </a>
       </div>  
       </div>

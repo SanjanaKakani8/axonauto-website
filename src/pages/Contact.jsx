@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { Phone, Mail, MapPin, Send, MessageCircle, Clock } from 'lucide-react';
+import { Phone, MessageCirce, Mail, MapPin, Send, MessageCircle, Clock } from 'lucide-react';
 
 import SEO from '../components/SEO.jsx';
 import ParticleBackground from '../components/ParticleBackground.jsx';
@@ -15,11 +15,33 @@ const fadeUp = {
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [formData, setFormData] = useState({
+    name:"",
+    phone:"",
+    service:"",
+    message:"",
+  })
   const submitRipple = useRipple();
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    // UI-only form per brief — no backend wired up.
+  e.preventDefault();
+
+  const whatsappMessage = `🚗 *New Service Request*
+
+  Name: ${formData.name}
+  Phone: ${formData.phone}
+  Service: ${formData.service}
+
+  Additional Details:
+  ${formData.message}
+
+  Thank you.`;
+
+    const url = `https://wa.me/${business.contact.whatsappRaw}?text=${encodeURIComponent(
+     whatsappMessage
+   )}`;
+
+    window.open(url, "_blank");
     setSubmitted(true);
   };
 
@@ -154,6 +176,10 @@ export default function Contact() {
                   </label>
                   <input
                     id="name"
+                    value={formData.name}
+                    onChange={(e) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
                     type="text"
                     required
                     placeholder="Your name"
@@ -166,6 +192,10 @@ export default function Contact() {
                   </label>
                   <input
                     id="phone"
+                    value={formData.phone}
+                    onChange={(e) =>
+                      setFormData({ ...formData, phone: e.target.value })
+                    }
                     type="tel"
                     required
                     placeholder="10-digit mobile number"
@@ -180,6 +210,10 @@ export default function Contact() {
                 </label>
                 <select
                   id="service"
+                  value={formData.service}
+                    onChange={(e) =>
+                      setFormData({ ...formData, service: e.target.value })
+                    }
                   className="w-full rounded-lg border border-white/10 bg-base/60 px-4 py-3 text-sm text-white outline-none focus:border-primary transition-colors"
                   defaultValue=""
                 >
@@ -197,6 +231,10 @@ export default function Contact() {
                 </label>
                 <textarea
                   id="message"
+                  value={formData.message}
+                    onChange={(e) =>
+                      setFormData({ ...formData, message: e.target.value })
+                    }
                   rows={4}
                   placeholder="Car model, location, and preferred time"
                   className="w-full resize-none rounded-lg border border-white/10 bg-base/60 px-4 py-3 text-sm text-white placeholder:text-ash/30 focus:border-primary outline-none transition-colors"

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Wrench, BatteryCharging, ShieldCheck, Zap, Check, ArrowRight, Phone } from 'lucide-react';
+import { Wrench, BatteryCharging, ShieldCheck,  MessageCircle, Zap, Check, ArrowRight, Phone } from 'lucide-react';
 import SEO from '../components/SEO.jsx';
 import ParticleBackground from '../components/ParticleBackground.jsx';
 import FAQAccordion from '../components/FAQAccordion.jsx';
@@ -72,21 +72,41 @@ export default function Services() {
                 transition={{ duration: 0.55 }}
                 className={`flex flex-col ${reversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-8 items-center rounded-2xl border border-white/10 bg-secondary/40 p-8 md:p-10`}
               >
-                <div className="flex-1">
-                  <div className="mb-5 grid h-14 w-14 place-items-center rounded-xl bg-primary/10 text-primary">
-                    <Icon size={26} />
-                  </div>
-                  <h2 className="font-display text-2xl font-bold text-white mb-3">{service.title}</h2>
-                  <p className="text-ash/70 leading-relaxed mb-6">{service.description}</p>
-                  <RippleLink to="/contact" className="btn-primary text-sm">
-                    Book This Service <ArrowRight size={16} />
-                  </RippleLink>
-                 <a href={`tel:${business.contact.phoneRaw}`} className="btn-primary text-sm" onClick={callRipple.onClick}>
-              <Phone size={12} /> Contact Us
-              {callRipple.ripples}
-            </a>
-          
+              <div className="flex-1">
+                <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary mb-5">
+                  <Icon size={22} />
                 </div>
+
+                <h2 className="text-3xl font-display font-bold text-white mb-4">
+                {service.title}
+                </h2>
+
+                <p className="text-ash/70 leading-8 mb-6">
+                {service.description}
+                </p>
+
+                <div className="flex gap-3 mt-6">
+
+                 <a
+                    href={`https://wa.me/${business.contact.whatsappRaw}?text=Hi%20AxonAuto,%20I'm%20interested%20in%20${encodeURIComponent(service.title)}.`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 flex items-center justify-center gap-2 rounded-xl bg-green-500 hover:bg-green-600 text-white text-sm font-semibold py-3 transition"
+                  >
+                  <MessageCircle size={16} />
+                  WhatsApp
+                 </a>
+
+                  <a
+                    href={`tel:${business.contact.phoneRaw}`}
+                    className="flex-1 flex items-center justify-center gap-2 rounded-xl bg-primary hover:bg-red-600 text-white text-sm font-semibold py-3 transition"
+                  >
+                  <Phone size={16} />
+                  Call
+                  </a>
+
+                </div>
+              </div>
 
                 <div className="flex-1 w-full">
                   <div className="mb-5 overflow-hidden rounded-2xl border border-white/10">
