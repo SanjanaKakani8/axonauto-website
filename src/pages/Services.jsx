@@ -70,22 +70,22 @@ export default function Services() {
                 whileInView="show"
                 viewport={{ once: true, margin: '-80px' }}
                 transition={{ duration: 0.55 }}
-                className={`flex flex-col ${reversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-8 items-center rounded-2xl border border-white/10 bg-secondary/40 p-8 md:p-10`}
+                className="w-full max-w-4xl mx-auto rounded-3xl border border-white/10 bg-secondary/40 overflow-hidden"
               >
-              <div className="flex-1">
-                <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary mb-5">
-                  <Icon size={22} />
-                </div>
-                <div className="w-full max-w-4xl mx-auto">
+                
+                <div className="p-6 md:p-8">
                   <div className="order-1 lg:order-2 mb-5 overflow-hidden rounded-2xl border border-white/10">
                     <img
                       src={service.image}
                       alt={service.title}
                       loading="lazy"
                       decoding="async"
-                      className="h-72 w-full lg:h-80 object-cover transition-transform rounded-2xl hover:scale-105"
+                      className="h-56 w-full md:h-72 object-cover transition-transform duration-500 hover:scale-105"
                     />
                   </div>
+                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary mb-5">
+                  <Icon size={22} />
+                </div>
                 <div className='order-2 lg:order-1'>
                 <h2 className="text-3xl font-display font-bold text-white mb-4">
                 {service.title}
@@ -105,13 +105,13 @@ export default function Services() {
                       </li>
                     ))}
                   </ul>
-                <div className="flex gap-4 justify-center mt-6">
+                <div className="flex flex-wrap justify-center gap-4 mt-8">
 
                  <a
                     href={`https://wa.me/${business.contact.whatsappRaw}?text=Hi%20AxonAuto,%20I'm%20interested%20in%20${encodeURIComponent(service.title)}.`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-48 flex items-center justify-center gap-2 rounded-xl bg-green-500 hover:bg-green-600 text-white text-sm font-semibold py-3 transition"
+                    className="flex-1 max-w-[180px] flex items-center justify-center gap-2 rounded-xl bg-green-500 hover:bg-green-600 text-white text-sm font-semibold py-3 transition"
                   >
                   <MessageCircle size={16} />
                   WhatsApp
@@ -119,7 +119,7 @@ export default function Services() {
 
                   <a
                     href={`tel:${business.contact.phoneRaw}`}
-                    className="w-48 flex items-center justify-center gap-2 rounded-xl bg-primary hover:bg-red-600 text-white text-sm font-semibold py-3 transition"
+                    className="flex-1 max-w-[180px] flex items-center justify-center gap-2 rounded-xl bg-primary hover:bg-red-600 text-white text-sm font-semibold py-3 transition"
                   >
                   <Phone size={16} />
                   Call
@@ -129,7 +129,7 @@ export default function Services() {
               </div>
 
                 
-               </div>   
+                 
                 </div>
               </motion.div>
             );
