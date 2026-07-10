@@ -37,7 +37,7 @@ export default function About() {
             initial="hidden"
             animate="show"
             transition={{ delay: 0.1 }}
-            className="section-heading max-w-2xl"
+            className="section-heading max-w-2xl text-white"
           >
             {business.experienceYears} years of showing up, on time, at your doorstep.
           </motion.h1>
@@ -45,15 +45,15 @@ export default function About() {
       </section>
 
       {/* Mission / Vision */}
-      <section className="py-20 border-t border-white/5">
-        <div className="container-page grid grid-cols-1 lg:grid-cols-5 gap-8 items-stretch">
+      <section className="py-12  border-t border-GRAY-200">
+        <div className="container-page grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
           <motion.div
             variants={fadeUp}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.5 }}
-            className="lg:col-span-2 overflow-hidden rounded-2xl border border-white/10 min-h-[220px]"
+            className="lg:col-span-1 overflow-hidden rounded-2xl border border-gray-200 min-h-[420px]"
           >
             <img
               src={galleryImages[0].src}
@@ -70,13 +70,13 @@ export default function About() {
             whileInView="show"
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.5 }}
-            className="lg:col-span-2 rounded-2xl border border-white/10 bg-secondary/40 p-8"
+            className="lg:col-span-1 rounded-2xl border border-gray-200 bg-white shadow-sm p-8"
           >
             <div className="mb-4 grid h-12 w-12 place-items-center rounded-xl bg-primary/10 text-primary">
               <Target size={22} />
             </div>
-            <h3 className="font-display text-xl font-semibold text-white mb-3">Our Mission</h3>
-            <p className="text-ash/70 leading-relaxed">{business.mission}</p>
+            <h3 className="font-display text-xl font-semibold text-gray-900 mb-3">Our Mission</h3>
+            <p className="text-gray-600 leading-relaxed">{business.mission}</p>
           </motion.div>
 
           <motion.div
@@ -85,19 +85,19 @@ export default function About() {
             whileInView="show"
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="lg:col-span-1 rounded-2xl border border-white/10 bg-secondary/40 p-8"
+            className="lg:col-span-1 rounded-2xl border border-gray-200 bg-white shadow-sm p-8"
           >
             <div className="mb-4 grid h-12 w-12 place-items-center rounded-xl bg-primary/10 text-primary">
               <Eye size={22} />
             </div>
-            <h3 className="font-display text-xl font-semibold text-white mb-3">Our Vision</h3>
-            <p className="text-ash/70 leading-relaxed">{business.vision}</p>
+            <h3 className="font-display text-xl font-semibold text-gray-900 mb-3">Our Vision</h3>
+            <p className="text-gray-600 leading-relaxed">{business.vision}</p>
           </motion.div>
         </div>
       </section>
 
       {/* Stats */}
-      <section className="py-20 border-t border-white/5 overflow-hidden relative">
+      <section className="py-12  border-t border-gray-700 overflow-hidden relative bg-gray-900">
         <div className="absolute inset-0 bg-radial-red -z-10" />
         <div className="container-page grid grid-cols-2 md:grid-cols-4 gap-8">
           {business.stats.map((stat) => (
@@ -107,7 +107,7 @@ export default function About() {
       </section>
 
       {/* Core Values */}
-      <section className="py-20 border-t border-white/5">
+      <section className="py-12 border-t border-white/5">
         <div className="container-page">
           <motion.div
             variants={fadeUp}
@@ -130,11 +130,11 @@ export default function About() {
                 whileInView="show"
                 viewport={{ once: true, margin: '-60px' }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="rounded-2xl border border-white/10 bg-secondary/30 p-6 hover:border-primary/40 transition-colors duration-300"
+                className="rounded-2xl border border-gray-200 bg-white shadow-sm p-6 hover:border-primary transition-all duration-300"
               >
                 <ShieldCheck size={20} className="text-primary mb-3" />
-                <h4 className="font-display text-base font-semibold text-white mb-1.5">{value.title}</h4>
-                <p className="text-sm text-ash/60 leading-relaxed">{value.description}</p>
+                <h4 className="font-display text-base font-semibold text-gray-900 mb-1.5">{value.title}</h4>
+                <p className="text-sm text-gray-600 leading-relaxed">{value.description}</p>
               </motion.div>
             ))}
           </div>

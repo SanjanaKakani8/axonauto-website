@@ -1,16 +1,10 @@
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Facebook, Instagram, Twitter, Linkedin } from 'lucide-react';
+import { Phone, Mail, MapPin, } from 'lucide-react';
 
 import Logo from './Logo.jsx';
 import { business } from '../data/business.js';
 import { services } from '../data/services.js';
 
-const SOCIALS = [
-  { key: 'facebook', Icon: Facebook },
-  { key: 'instagram', Icon: Instagram },
-  { key: 'twitter', Icon: Twitter },
-  { key: 'linkedin', Icon: Linkedin },
-];
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -24,18 +18,7 @@ export default function Footer() {
           <p className="mt-4 text-sm text-ash/70 leading-relaxed max-w-xs">
             {business.shortDescription}
           </p>
-          <div className="mt-5 flex gap-3">
-            {SOCIALS.map(({ key, Icon }) => (
-              <a
-                key={key}
-                href={business.socials[key]}
-                aria-label={`AxonAuto on ${key}`}
-                className="grid h-9 w-9 place-items-center rounded-full border border-white/10 text-ash/70 transition-colors hover:border-primary hover:text-primary"
-              >
-                <Icon size={16} />
-              </a>
-            ))}
-          </div>
+          
         </div>
 
         {/* Quick links */}

@@ -35,7 +35,7 @@ export default function Contact() {
         description={`Get in touch with ${business.fullName} to book a doorstep car service in ${business.location.city}.`}
       />
 
-      <section className="relative pt-40 pb-16 overflow-hidden">
+      <section className="relative  pt-40 pb-16 overflow-hidden">
         <ParticleBackground />
         <div className="container-page">
           <motion.p variants={fadeUp} initial="hidden" animate="show" className="eyebrow mb-3">
@@ -53,7 +53,7 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="pb-24 border-t border-white/5 pt-16">
+      <section className="pb-24  border-t border-white/5 pt-16">
         <div className="container-page grid grid-cols-1 lg:grid-cols-5 gap-10">
           {/* Contact details */}
           <motion.div
@@ -220,16 +220,7 @@ export default function Contact() {
             </form>
 
             {/* Real service photo + Google Maps placeholder */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              
-              <div className="relative aspect-square overflow-hidden rounded-2xl border border-white/10 bg-secondary/40 grid place-items-center">
-                <div className="text-center px-4">
-                  <MapPin className="mx-auto mb-3 text-primary" size={28} />
-                  <p className="text-sm text-ash/50">Google Maps embed placeholder</p>
-                  <p className="text-xs text-ash/30 mt-1">Serving {business.location.city} and surrounding areas</p>
-                </div>
-              </div>
-            </div>
+            
           </motion.div>
         </div>
       </section>

@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Wrench, BatteryCharging, ShieldCheck, Zap, Check, ArrowRight, Phone } from 'lucide-react';
-
 import SEO from '../components/SEO.jsx';
 import ParticleBackground from '../components/ParticleBackground.jsx';
 import FAQAccordion from '../components/FAQAccordion.jsx';
@@ -82,6 +81,11 @@ export default function Services() {
                   <RippleLink to="/contact" className="btn-primary text-sm">
                     Book This Service <ArrowRight size={16} />
                   </RippleLink>
+                 <a href={`tel:${business.contact.phoneRaw}`} className="btn-primary text-sm" onClick={callRipple.onClick}>
+              <Phone size={12} /> Contact Us
+              {callRipple.ripples}
+            </a>
+          
                 </div>
 
                 <div className="flex-1 w-full">
@@ -145,10 +149,7 @@ export default function Services() {
               <Phone size={18} /> {business.contact.phone}
               {callRipple.ripples}
             </a>
-            <Link to="/contact" className="btn-secondary" onClick={contactRipple.onClick}>
-              Contact Us <ArrowRight size={18} />
-              {contactRipple.ripples}
-            </Link>
+          
           </div>
         </div>
       </section>

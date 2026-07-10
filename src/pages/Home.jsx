@@ -38,7 +38,7 @@ export default function Home() {
         description={business.shortDescription}
       />
       {/* ───────────── HERO ───────────── */}
-      <section className="relative min-h-screen overflow-hidden flex items-center">
+      <section className="relative min-h-[100dvh] overflow-hidden flex items-center pt-24 md:pt-28">
         <HeroVideo />
         <div className='relative z-10'>
 
@@ -86,7 +86,7 @@ export default function Home() {
           </motion.h1>
 
           <motion.p
-            className="mt-6 max-w-xl text-base md:text-lg text-ash/70 leading-relaxed"
+            className="mt-6 max-w-xl text-base md:text-lg text-white leading-relaxed drop-shadow-md"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: baseDelay + 0.3, duration: 0.7 }}
@@ -134,7 +134,7 @@ export default function Home() {
       </section>
 
       {/* ───────────── SERVICES PREVIEW ───────────── */}
-      <section className="relative py-24 md:py-32">
+      <section className="relative py-16 md:py-20">
         <div className="container-page">
           <motion.div
             variants={fadeUp}
@@ -157,7 +157,7 @@ export default function Home() {
       </section>
 
       {/* ───────────── ABOUT ───────────── */}
-      <section className="relative py-24 md:py-32 border-t border-white/5">
+      <section className="relative  py-16 md:py-20 border-t border-gray-200">
         <div className="container-page grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div
             variants={fadeUp}
@@ -170,15 +170,15 @@ export default function Home() {
             <h2 className="section-heading mb-6">
               Built on reliability. Driven by your convenience.
             </h2>
-            <p className="text-ash/70 leading-relaxed mb-5">{business.shortDescription}</p>
+            <p className="text-gray-700 leading-relaxed mb-5">{business.shortDescription}</p>
             <div className="space-y-4">
               <div>
-                <h4 className="font-display text-sm font-semibold text-white mb-1">Our Mission</h4>
-                <p className="text-sm text-ash/60">{business.mission}</p>
+                <h4 className="font-display text-sm font-semibold text-primary mb-1">Our Mission</h4>
+                <p className="text-sm text-gray-600">{business.mission}</p>
               </div>
               <div>
-                <h4 className="font-display text-sm font-semibold text-white mb-1">Our Vision</h4>
-                <p className="text-sm text-ash/60">{business.vision}</p>
+                <h4 className="font-display text-sm font-semibold text-primary mb-1">Our Vision</h4>
+                <p className="text-sm text-gray-600">{business.vision}</p>
               </div>
             </div>
             <Link to="/about" className="btn-secondary mt-8 inline-flex">
@@ -192,7 +192,7 @@ export default function Home() {
             whileInView="show"
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="grid grid-cols-2 gap-6 rounded-2xl border border-white/10 bg-secondary/40 p-8"
+            className="grid grid-cols-2 gap-6 rounded-2xl border border-gray-700 bg-gray-900 shadow-xl p-8"
           >
             {business.stats.map((stat) => (
               <StatCounter key={stat.label} value={stat.value} suffix={stat.suffix} label={stat.label} />
@@ -202,7 +202,7 @@ export default function Home() {
       </section>
 
       {/* ───────────── WHY CHOOSE US ───────────── */}
-      <section className="relative py-24 md:py-32 border-t border-white/5">
+      <section className="relative  py-16 md:py-20 border-t border-white/5">
         <div className="container-page">
           <motion.div
             variants={fadeUp}
@@ -225,8 +225,7 @@ export default function Home() {
       </section>
 
       {/* ───────────── CALL TO ACTION ───────────── */}
-      <section className="relative py-24 md:py-28 border-t border-white/5 overflow-hidden">
-        <div className="absolute inset-0 bg-radial-red -z-10" />
+      <section className="relative  py-16 md:py-20 border-t border-gray-200">
         <div className="container-page text-center">
           <motion.h2
             variants={fadeUp}
@@ -244,7 +243,7 @@ export default function Home() {
             whileInView="show"
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-ash/70 max-w-xl mx-auto mb-9"
+            className="text-gray-500 max-w-xl mx-auto mb-9 text-lg"
           >
             Book a doorstep visit in {business.location.city} and let our technicians handle the rest.
           </motion.p>
@@ -269,7 +268,7 @@ export default function Home() {
       </section>
 
       {/* ───────────── GALLERY PREVIEW ───────────── */}
-      <section className="relative py-24 md:py-28 border-t border-white/5">
+      <section className="relative  py-16 md:py-20 border-t border-gray-200">
         <div className="container-page">
           <motion.div
             variants={fadeUp}
@@ -297,7 +296,7 @@ export default function Home() {
                 whileInView="show"
                 viewport={{ once: true, margin: '-60px' }}
                 transition={{ duration: 0.5, delay: i * 0.07 }}
-                className="group aspect-square overflow-hidden rounded-2xl border border-white/10"
+                className="group aspect-square overflow-hidden rounded-2xl border border-gray-200"
               >
                 <img
                   src={img.src}
@@ -313,7 +312,7 @@ export default function Home() {
       </section>
 
       {/* ───────────── CONTACT PREVIEW ───────────── */}
-      <section className="relative py-24 md:py-28 border-t border-white/5">
+      <section className="relative py-16 md:py-20 border-t border-gray-200">
         <div className="container-page grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <motion.div
             variants={fadeUp}
@@ -324,11 +323,11 @@ export default function Home() {
           >
             <p className="eyebrow mb-3">Get In Touch</p>
             <h2 className="section-heading mb-6">Book your doorstep visit</h2>
-            <p className="text-ash/70 leading-relaxed mb-6 max-w-md">
+            <p className="text-gray-700 leading-relaxed mb-6 max-w-md">
               Reach out over phone, WhatsApp, or email — or send a quick message and our team will
               confirm a time that works for you.
             </p>
-            <ul className="space-y-3 text-sm text-ash/70">
+            <ul className="space-y-3 text-sm text-gray-700">
               <li>Phone: <a href={`tel:${business.contact.phoneRaw}`} className="text-primary hover:underline">{business.contact.phone}</a></li>
               <li>Email: <a href={`mailto:${business.contact.email}`} className="text-primary hover:underline">{business.contact.email}</a></li>
               <li>Location: {business.location.city}, {business.location.country}</li>
@@ -342,35 +341,35 @@ export default function Home() {
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.6, delay: 0.15 }}
             onSubmit={(e) => e.preventDefault()}
-            className="rounded-2xl border border-white/10 bg-secondary/40 p-7 space-y-4"
+            className="rounded-2xl border border-gray-200 bg-white p-7 space-y-4 shadow-md"
           >
             <div>
-              <label htmlFor="home-name" className="mb-1.5 block text-xs font-medium text-ash/60">Full Name</label>
+              <label htmlFor="home-name" className="mb-1.5 block text-xs font-medium text-gray-600">Full Name</label>
               <input
                 id="home-name"
                 type="text"
                 required
                 placeholder="Your name"
-                className="w-full rounded-lg border border-white/10 bg-base/60 px-4 py-3 text-sm text-white placeholder:text-ash/30 focus:border-primary outline-none transition-colors"
+                className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 placeholder:text-gray-400 focus:border-primary outline-none transition-colors"
               />
             </div>
             <div>
-              <label htmlFor="home-phone" className="mb-1.5 block text-xs font-medium text-ash/60">Phone Number</label>
+              <label htmlFor="home-phone" className="mb-1.5 block text-xs font-medium text-gray-600">Phone Number</label>
               <input
                 id="home-phone"
                 type="tel"
                 required
                 placeholder="10-digit mobile number"
-                className="w-full rounded-lg border border-white/10 bg-base/60 px-4 py-3 text-sm text-white placeholder:text-ash/30 focus:border-primary outline-none transition-colors"
+                className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 placeholder:text-gray-400 focus:border-primary outline-none transition-colors"
               />
             </div>
             <div>
-              <label htmlFor="home-message" className="mb-1.5 block text-xs font-medium text-ash/60">What do you need?</label>
+              <label htmlFor="home-message" className="mb-1.5 block text-xs font-medium text-gray-600">What do you need?</label>
               <textarea
                 id="home-message"
                 rows={3}
                 placeholder="Tell us about your car and preferred time"
-                className="w-full resize-none rounded-lg border border-white/10 bg-base/60 px-4 py-3 text-sm text-white placeholder:text-ash/30 focus:border-primary outline-none transition-colors"
+                className="w-full resize-none rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 placeholder:text-gray-400 focus:border-primary outline-none transition-colors"
               />
             </div>
             <button type="submit" className="btn-primary w-full" onClick={formRipple.onClick}>

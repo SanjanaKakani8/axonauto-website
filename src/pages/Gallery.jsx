@@ -32,7 +32,7 @@ export default function Gallery() {
         description={`See AxonAuto's doorstep car service work in ${business.location.city} — real engine bays, genuine parts, and careful workmanship.`}
       />
 
-      <section className="relative pt-40 pb-16 overflow-hidden">
+      <section className="relative  pt-40 pb-16 overflow-hidden">
         <ParticleBackground />
         <div className="container-page">
           <motion.p variants={fadeUp} initial="hidden" animate="show" className="eyebrow mb-3">
@@ -50,7 +50,7 @@ export default function Gallery() {
         </div>
       </section>
 
-      <section className="pb-24 border-t border-white/5 pt-16">
+      <section className="pb-24  border-t border-white/5 pt-16">
         <div className="container-page grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {galleryImages.map((img, i) => (
             <motion.button

@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Wrench, BatteryCharging, ShieldCheck, Zap, ArrowRight } from 'lucide-react';
+import { Wrench, BatteryCharging, ShieldCheck, Zap, Phone, ArrowRight } from 'lucide-react';
+import RippleLink from './RippleLink.jsx';
+import { business } from '../data/business.js';
 
 const ICONS = {
   wrench: Wrench,
@@ -41,12 +43,17 @@ export default function ServiceCard({ service, index = 0 }) {
         </div>
         <h3 className="font-display text-lg font-semibold text-white mb-2">{service.title}</h3>
         <p className="text-sm text-ash/70 leading-relaxed mb-5">{service.shortDescription}</p>
-        <Link
-          to="/services"
-          className="inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-all group-hover:gap-2.5"
+      <div className="mt-auto flex items-center gap-3">
+        <RippleLink to="/contact" className="btn-primary !py-2.5 flex-1 text-sm">
+          Book Service
+        </RippleLink>
+        <a
+          href={`tel:${business.contact.phoneRaw}`}
+          className="btn-secondary !py-2.5 flex-1 text-sm"
         >
-          Learn more <ArrowRight size={15} />
-        </Link>
+          <Phone size={16} /> Call Now
+        </a>
+      </div>  
       </div>
     </motion.div>
   );

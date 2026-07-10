@@ -7,7 +7,7 @@ export const business = {
   tagline: 'Your Trusted Automotive Partner for Doorstep Car Care',
   shortDescription:
     'AxonAuto is your trusted automotive partner providing professional doorstep car care, maintenance, diagnostics, battery replacement and roadside assistance across Hyderabad.',
-  experienceYears: '3+',
+  experienceYears: '10+',
   location: {
     city: 'Hyderabad',
     region: 'Telangana',
@@ -21,9 +21,9 @@ export const business = {
     whatsappRaw: '919618332752',
     email: 'axonauto25@gmail.com',
   },
-  vision: "To become Hyderabad's most trusted doorstep automotive service provider.",
+  vision: "To become Hyderabad's most trusted doorstep automotive service provider by setting new standards in quality, convenience, and customer satisfaction. We aim to build lasting relationships through innovation, dependable service, and a commitment to keeping every journey safe and stress-free.",
   mission:
-    "Deliver reliable, professional and convenient automotive services directly at customers' doorsteps.",
+    "To make professional automotive care simple, reliable, and accessible by delivering high-quality doorstep services. We are committed to using genuine parts, skilled technicians, transparent pricing, and prompt support so every customer enjoys a safe, hassle-free, and trustworthy service experience.",
   values: [
     {
       title: 'Customer First',
@@ -47,7 +47,7 @@ export const business = {
     },
   ],
   stats: [
-    { label: 'Years of Experience', value: 3, suffix: '+' },
+    { label: 'Years of Experience', value: 10, suffix: '+' },
     { label: 'Cars Serviced', value: 2400, suffix: '+' },
     { label: 'Doorstep Visits', value: 5000, suffix: '+' },
     { label: 'Cities Coverage', value: 1, suffix: '' },
@@ -74,12 +74,7 @@ export const business = {
       description: 'Real people on call to guide you before, during, and after service.',
     },
   ],
-  socials: {
-    facebook: '#',
-    instagram: '#',
-    twitter: '#',
-    linkedin: '#',
-  },
+ 
   businessHours: [
     { day: 'Monday – Sunday', hours: '8:00 AM – 9:00 PM' },
   

@@ -12,7 +12,7 @@ export default function NotFound() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen  flex items-center justify-center overflow-hidden"
     >
       <SEO title="Page Not Found" description="The page you're looking for doesn't exist." />
       <ParticleBackground />
