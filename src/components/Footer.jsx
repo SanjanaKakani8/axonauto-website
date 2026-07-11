@@ -1,12 +1,14 @@
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, } from 'lucide-react';
+import { Phone, ChevronDown, Mail, MapPin, } from 'lucide-react';
 
 import Logo from './Logo.jsx';
 import { business } from '../data/business.js';
 import { services } from '../data/services.js';
+import React, { useState } from 'react';
 
 
 export default function Footer() {
+  const [showLocations, setShowLocations] = useState(false);
   const year = new Date().getFullYear();
 
   return (
@@ -73,7 +75,60 @@ export default function Footer() {
               <MapPin size={15} className="text-primary shrink-0" />
               {business.location.city}, {business.location.country}
             </li>
-          </ul>
+          
+      <li>
+              <div className="mt-4">
+  <button
+    onClick={() => setShowLocations(!showLocations)}
+    className="w-full flex items-center justify-between w-full text-left"
+  >
+    <span className="flex items-center gap-2 text-ash/80">
+      <MapPin className="text-primary" size={18} />
+      <span> Service Locations</span>
+      </span>
+    <ChevronDown
+      size={18}
+      className={`transition-transform duration-300 ${
+        showLocations ? "rotate-180" : ""
+      }`}
+    />
+  </button>
+
+  {showLocations && (
+    <div className="mt-3 ml-6 max-h-48 overflow-y-auto pr-2 space-y-2 text-sm text-ash/70 scrollbar-thin scrollbar-thumb-primary scrollbar-track-transparent">
+
+        <p>📍 L.B. Nagar</p>
+        <p>📍 Rajendranagar</p>
+        <p>📍 TGPA, Bandlaguda Jagir</p>
+        <p>📍 Mehdipatnam</p>
+        <p>📍 Tolichowki</p>
+        <p>📍 Manikonda</p>
+        <p>📍 Narsingi</p>
+        <p>📍 Nanakramguda</p>
+        <p>📍 Tellapur</p>
+        <p>📍 Nallagandla</p>
+        <p>📍 Serilingampalle</p>
+        <p>📍 Ramachandrapuram</p>
+        <p>📍 Gachibowli</p>
+        <p>📍 Kondapur</p>
+        <p>📍 Banjara Hills</p>
+        <p>📍 Ameerpet</p>
+        <p>📍 Madhapur</p>
+        <p>📍 Kukatpally</p>
+        <p>📍 Miyapur</p>
+        <p>📍 Bachupally</p>
+        <p>📍 Balanagar</p>
+        <p>📍 Gandi Maisamma</p>
+        <p>📍 Kompally</p>
+        <p>📍 Tirumalagiri</p>
+        <p>📍 Ghatkesar</p>
+
+      </div>
+  
+  )}
+</div>
+</li>
+</ul>
         </div>
       </div>
 
