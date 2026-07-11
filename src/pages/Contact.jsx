@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { Phone, MessageCirce, Mail, MapPin, Send, MessageCircle, Clock } from 'lucide-react';
+import { Phone, Mail, MapPin, Send, MessageCircle, Clock } from 'lucide-react';
 
 import SEO from '../components/SEO.jsx';
 import ParticleBackground from '../components/ParticleBackground.jsx';
@@ -154,7 +154,7 @@ export default function Contact() {
             </div>
           </motion.div>
 
-          {/* Form + Map */}
+          {/*   + Map */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
@@ -224,7 +224,49 @@ export default function Contact() {
                   <option>Jump Start</option>
                 </select>
               </div>
+              <div>
+  <label
+    htmlFor="location"
+    className="mb-1.5 block text-xs font-medium text-ash/60"
+  >
+    Service Location
+  </label>
 
+  <select
+    id="location"
+    required
+    defaultValue=""
+    className="w-full rounded-lg border border-white/10 bg-base/60 px-4 py-3 text-sm text-white outline-none focus:border-primary transition-colors"
+  >
+    <option value="" disabled>Select your location</option>
+
+    <option>L.B. Nagar</option>
+    <option>Rajendranagar</option>
+    <option>TGPA, Bandlaguda Jagir</option>
+    <option>Mehdipatnam</option>
+    <option>Tolichowki</option>
+    <option>Manikonda</option>
+    <option>Narsingi</option>
+    <option>Nanakramguda</option>
+    <option>Tellapur</option>
+    <option>Nallagandla</option>
+    <option>Serilingampalle</option>
+    <option>Ramachandrapuram</option>
+    <option>Gachibowli</option>
+    <option>Kondapur</option>
+    <option>Banjara Hills</option>
+    <option>Ameerpet</option>
+    <option>Madhapur</option>
+    <option>Kukatpally</option>
+    <option>Miyapur</option>
+    <option>Bachupally</option>
+    <option>Balanagar</option>
+    <option>Gandi Maisamma</option>
+    <option>Kompally</option>
+    <option>Tirumalagiri</option>
+    <option>Ghatkesar</option>
+  </select>
+</div>
               <div>
                 <label htmlFor="message" className="mb-1.5 block text-xs font-medium text-ash/60">
                   Additional Details

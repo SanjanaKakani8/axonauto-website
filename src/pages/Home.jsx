@@ -101,11 +101,11 @@ export default function Home() {
             transition={{ delay: baseDelay + 0.45, duration: 0.7 }}
           >
             <Link to="/contact" className="btn-primary" onClick={bookRipple.onClick}>
-              Book Service <ArrowRight size={18} />
+              Book Now <ArrowRight size={18} />
               {bookRipple.ripples}
             </Link>
             <a href={`tel:${business.contact.phoneRaw}`} className="btn-secondary" onClick={callRipple.onClick}>
-              <Phone size={18} /> Call Now
+              <Phone size={18} /> Call
               {callRipple.ripples}
             </a>
           </motion.div>
@@ -288,7 +288,7 @@ export default function Home() {
           </motion.div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {galleryImages.slice(0, 4).map((img, i) => (
+            {galleryImages.slice(0, 8).map((img, i) => (
               <motion.div
                 key={img.id}
                 variants={fadeUp}
