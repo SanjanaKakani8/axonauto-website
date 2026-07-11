@@ -79,7 +79,7 @@ export default function Footer() {
 
       <div className="border-t border-white/5 py-6">
         <p className="container-page text-center text-xs text-ash/50">
-          © {year} {business.fullName}. All rights reserved.
+          © {year} {business.fullName}. All rights reserved.Owned and operated by A. Venkat Adithya.
         </p>
       </div>
     </footer>

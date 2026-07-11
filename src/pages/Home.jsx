@@ -170,15 +170,15 @@ export default function Home() {
             <h2 className="section-heading mb-6">
               Built on reliability. Driven by your convenience.
             </h2>
-            <p className="text-gray-700 leading-relaxed mb-5">{business.shortDescription}</p>
+            <p className="text-gray-400 leading-relaxed mb-5">{business.shortDescription}</p>
             <div className="space-y-4">
               <div>
                 <h4 className="font-display text-sm font-semibold text-primary mb-1">Our Mission</h4>
-                <p className="text-sm text-gray-600">{business.mission}</p>
+                <p className="text-sm text-gray-400">{business.mission}</p>
               </div>
               <div>
                 <h4 className="font-display text-sm font-semibold text-primary mb-1">Our Vision</h4>
-                <p className="text-sm text-gray-600">{business.vision}</p>
+                <p className="text-sm text-gray-400">{business.vision}</p>
               </div>
             </div>
             <Link to="/about" className="btn-secondary mt-8 inline-flex">
@@ -323,11 +323,11 @@ export default function Home() {
           >
             <p className="eyebrow mb-3">Get In Touch</p>
             <h2 className="section-heading mb-6">Book your doorstep visit</h2>
-            <p className="text-gray-700 leading-relaxed mb-6 max-w-md">
+            <p className="text-gray-400 leading-relaxed mb-6 max-w-md">
               Reach out over phone, WhatsApp, or email — or send a quick message and our team will
               confirm a time that works for you.
             </p>
-            <ul className="space-y-3 text-sm text-gray-700">
+            <ul className="space-y-3 text-sm text-gray-400">
               <li>Phone: <a href={`tel:${business.contact.phoneRaw}`} className="text-primary hover:underline">{business.contact.phone}</a></li>
               <li>Email: <a href={`mailto:${business.contact.email}`} className="text-primary hover:underline">{business.contact.email}</a></li>
               <li>Location: {business.location.city}, {business.location.country}</li>
