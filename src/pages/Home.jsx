@@ -130,8 +130,9 @@ export default function Home() {
           </motion.div>
         </div>
 
-        <ScrollIndicator delay={baseDelay + 0.3} />
+        
         </div>
+        <ScrollIndicator delay={baseDelay + 0.3} />
       </section>
 
       {/* ───────────── SERVICES PREVIEW ───────────── */}

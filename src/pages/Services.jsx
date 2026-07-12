@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Wrench, BatteryCharging, ShieldCheck,  MessageCircle, Zap, Check, ArrowRight, Phone } from 'lucide-react';
@@ -22,8 +23,23 @@ const fadeUp = {
   show: { opacity: 1, y: 0 },
 };
 
+const categories = [
+  "All Services",
+  "Periodic",
+  "Roadside Assistance",
+  "Denting & Painting",
+];
+
 export default function Services() {
   const callRipple = useRipple();
+  const [selectedCategory, setSelectedCategory] = useState("All Services");
+
+const filteredServices =
+  selectedCategory === "All Services"
+    ? services
+    : services.filter(
+        (service) => service.category === selectedCategory
+      );
   const contactRipple = useRipple();
 
   return (
@@ -57,8 +73,32 @@ export default function Services() {
       </section>
 
       <section className="py-16 border-t border-white/5">
-        <div className="container-page space-y-10">
-          {services.map((service, i) => {
+        <div className="container-page">
+          <div className="container-page">
+
+  <div className="flex flex-wrap justify-center items-center overflow-x-auto gap-3  pb-5 mb-10 scrollbar-hide">
+
+    {categories.map((category) => (
+
+      <button
+        key={category}
+        onClick={() => setSelectedCategory(category)}
+        className={`whitespace-nowrap rounded-full px-6 py-3 text-sm font-semibold transition
+
+        ${
+          selectedCategory === category
+            ? "bg-primary text-white"
+            : "bg-secondary/40 border border-white/10 text-ash hover:border-primary"
+        }`}
+      >
+        {category}
+      </button>
+
+    ))}
+
+  </div>
+  <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 flex items-stretch h-full'>
+          {filteredServices.map((service, i) => {
             const Icon = ICONS[service.icon] || Wrench;
             const reversed = i % 2 === 1;
             return (
@@ -70,11 +110,11 @@ export default function Services() {
                 whileInView="show"
                 viewport={{ once: true, margin: '-80px' }}
                 transition={{ duration: 0.55 }}
-                className="w-full max-w-4xl mx-auto rounded-3xl border border-white/10 bg-secondary/40 overflow-hidden"
+                className="w-full rounded-3xl border border-white/10 bg-secondary/40 h-full overflow-hidden"
               >
                 
-                <div className="p-6 md:p-8">
-                  <div className="order-1 lg:order-2 mb-5 overflow-hidden rounded-2xl border border-white/10">
+                <div className="p-6 md:p-8 flex flex-col h-full">
+                  <div className="mb-5 overflow-hidden rounded-2xl border h-full border-white/10">
                     <img
                       src={service.image}
                       alt={service.title}
@@ -86,15 +126,15 @@ export default function Services() {
                   <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary mb-5">
                   <Icon size={22} />
                 </div>
-                <div className='order-2 lg:order-1'>
+                <div className='flex flex-col flex-grow'>
                 <h2 className="text-3xl font-display font-bold text-white mb-4">
                 {service.title}
                 </h2>
 
-                <p className="text-ash/70 leading-8 mb-6">
+                <p className="text-ash/70 leading-7 mb-5 min-h-[90px]">
                 {service.description}
                 </p>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <ul className="grid grid-cols-1 sm:grid-cols-2 min-h-[95px] gap-3">
                     {service.features.map((f) => (
                       <li
                         key={f}
@@ -105,7 +145,7 @@ export default function Services() {
                       </li>
                     ))}
                   </ul>
-                <div className="flex flex-wrap justify-center gap-4 mt-8">
+                <div className="flex flex-wrap justify-center gap-3 mt-5">
 
                  <a
                     href={`https://wa.me/${business.contact.whatsappRaw}?text=Hi%20AxonAuto,%20I'm%20interested%20in%20${encodeURIComponent(service.title)}.`}
@@ -134,6 +174,8 @@ export default function Services() {
               </motion.div>
             );
           })}
+          </div>
+        </div>
         </div>
       </section>
 
