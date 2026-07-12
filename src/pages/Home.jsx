@@ -16,6 +16,7 @@ import logoGear from '../assets/logo-gear.png';
 import logoText from '../assets/logo-text.png';
 import useRipple from '../hooks/useRipple.jsx';
 import HeroVideo from '../components/HeroVideo.jsx';
+import GoogleReviews from "../components/GoogleReviews";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -310,7 +311,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-
+            <GoogleReviews />
       {/* ───────────── CONTACT PREVIEW ───────────── */}
       <section className="relative py-16 md:py-20 border-t border-gray-200">
         <div className="container-page grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">

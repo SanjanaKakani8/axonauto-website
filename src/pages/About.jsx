@@ -32,17 +32,39 @@ export default function About() {
           <motion.p variants={fadeUp} initial="hidden" animate="show" className="eyebrow mb-3">
             About AxonAuto
           </motion.p>
+          <motion.div
+  variants={fadeUp}
+  initial="hidden"
+  animate="show"
+  transition={{ delay: 0.2 }}
+  className="mt-10 flex flex-col items-center"
+>
+  <img
+    src="/gallery/owner.jpeg"
+    alt="A. Venkat Adithya"
+    className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover object-top border-4 border-primary shadow-xl"
+  />
+
+  <h3 className="mt-5 text-2xl font-bold text-white">
+    A. Venkat Adithya
+  </h3>
+
+  <p className="text-primary font-medium mt-1">
+    Founder, AxonAuto
+  </p>
+  </motion.div>
           <motion.h1
             variants={fadeUp}
             initial="hidden"
             animate="show"
             transition={{ delay: 0.1 }}
-            className="section-heading max-w-2xl text-white"
+            className="section-heading text-w-2xl text-white"
           >
-            {business.experienceYears} years of showing up, on time, at your doorstep.
+            {business.experienceYears} years of showing up on time, at your doorstep.
           </motion.h1>
         </div>
       </section>
+    
 
       {/* Mission / Vision */}
       <section className="py-12  border-t border-GRAY-200">
