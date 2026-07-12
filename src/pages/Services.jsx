@@ -25,9 +25,10 @@ const fadeUp = {
 
 const categories = [
   "All Services",
+  "General",
   "Periodic",
-  "Roadside Assistance",
-  "Denting & Painting",
+  "Roadside",
+  
 ];
 
 export default function Services() {
@@ -114,13 +115,13 @@ const filteredServices =
               >
                 
                 <div className="p-6 md:p-8 flex flex-col h-full">
-                  <div className="mb-5 overflow-hidden rounded-2xl border h-full border-white/10">
+                  <div className="mb-5 overflow-hidden rounded-2xl border h-56 border-white/10">
                     <img
                       src={service.image}
                       alt={service.title}
                       loading="lazy"
                       decoding="async"
-                      className="h-56 w-full md:h-72 object-cover transition-transform duration-500 hover:scale-105"
+                      className="h-full w-full  object-cover transition-transform duration-500 hover:scale-105"
                     />
                   </div>
                   <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary mb-5">
@@ -145,7 +146,7 @@ const filteredServices =
                       </li>
                     ))}
                   </ul>
-                <div className="flex flex-wrap justify-center gap-3 mt-5">
+                <div className="flex flex-wrap justify-center gap-4 pt-8 mt-auto">
 
                  <a
                     href={`https://wa.me/${business.contact.whatsappRaw}?text=Hi%20AxonAuto,%20I'm%20interested%20in%20${encodeURIComponent(service.title)}.`}

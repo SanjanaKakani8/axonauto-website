@@ -42,7 +42,7 @@ export default function Footer() {
           <h4 className="font-display text-sm font-semibold uppercase tracking-wider text-white mb-4">
             Services
           </h4>
-          <ul className="space-y-3 text-sm text-ash/70">
+          <ul className="space-y-3 max-h-48 text-sm text-ash/70 overflow-y-auto pr-2 custom-scrollbar">
             {services.map((s) => (
               <li key={s.id}>
                 <Link to="/services" className="hover:text-primary transition-colors">

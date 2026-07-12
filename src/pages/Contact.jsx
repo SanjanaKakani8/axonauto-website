@@ -147,7 +147,8 @@ export default function Contact() {
                 <p className="text-xs uppercase tracking-wider text-ash/50 mb-1.5">Business Hours</p>
                 {business.businessHours.map((h) => (
                   <p key={h.day} className="text-sm text-ash/70">
-                    <span className="text-white/80">{h.day}:24/7</span> 
+                    <span className="text-white/80">{h.day}:8:30am-9:00pm</span> <br />
+                    <span className="text-white/80">Roadside:24/7</span>
                   </p>
                 ))}
               </div>

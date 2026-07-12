@@ -110,7 +110,7 @@ export const services = [
 
   {
     id: "roadside-assistance",
-    category: "Roadside Assistance",
+    category: "Roadside",
     icon: "shield",
     image: roadsideAssistance,
     title: "Roadside Assistance",
@@ -127,7 +127,7 @@ export const services = [
 
   {
     id: "jump-start",
-    category: "Roadside Assistance",
+    category: "Roadside",
     icon: "zap",
     image: jumpStart,
     title: "Jump Start",
@@ -144,7 +144,7 @@ export const services = [
 
   {
     id: "fuel-assistance",
-    category: "Roadside Assistance",
+    category: "Roadside",
     icon: "battery",
     image: fuelAssistance,
     title: "Fuel Assistance",
@@ -161,7 +161,7 @@ export const services = [
 
   {
     id: "door-unlock",
-    category: "Roadside Assistance",
+    category: "Roadside",
     icon: "shield",
     image: doorUnlock,
     title: "Door Unlock",
@@ -178,7 +178,7 @@ export const services = [
 
   {
     id: "towing",
-    category: "Roadside Assistance",
+    category: "Roadside",
     icon: "shield",
     image: towing,
     title: "Towing",
@@ -197,7 +197,7 @@ export const services = [
 
   {
     id: "denting-painting",
-    category: "Denting & Painting",
+    category: "General",
     icon: "wrench",
     image: dentingPainting,
     title: "Denting & Painting",
@@ -214,7 +214,7 @@ export const services = [
 
   {
     id: "windshield-replacement",
-    category: "Denting & Painting",
+    category: "General",
     icon: "shield",
     image: windshieldReplacement,
     title: "Windshield Replacement",
@@ -231,7 +231,7 @@ export const services = [
 
   {
     id: "tyres",
-    category: "Denting & Painting",
+    category: "General",
     icon: "wrench",
     image: tyreService,
     title: "Tyres",
